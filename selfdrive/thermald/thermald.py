@@ -410,7 +410,7 @@ def thermald_thread():
     msg.deviceState.chargingDisabled = power_monitor.should_disable_charging(pandaState, off_ts)
 
     # Set EON charging disable
-    # based on kegman, Â÷·® Àú¾Ğ¹èÅÍ¸®ÀÇ Àü¾Ğ, ÀÌ¿Â ¹èÅÍ¸® ÆÛ¼¾Æ¼Áö,
+    # based on kegman, ì°¨ëŸ‰ ì €ì••ë°°í„°ë¦¬ì˜ ì „ì••, ì´ì˜¨ ë°°í„°ë¦¬ í¼ì„¼í‹°ì§€,
     if EON:
       from selfdrive.thermald.eon_battery_manager import setEONChargingStatus
       setEONChargingStatus(power_monitor.car_voltage_mV, msg.deviceState.batteryPercent)
@@ -424,7 +424,7 @@ def thermald_thread():
 
     # dp - auto shutdown
     if off_ts is not None:
-      shutdown_sec = 240
+      shutdown_sec = 300
       sec_now = sec_since_boot() - off_ts
       if (shutdown_sec - 5) < sec_now:
         msg.deviceState.chargingDisabled = True

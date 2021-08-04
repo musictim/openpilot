@@ -43,7 +43,7 @@ class CarInterface(CarInterfaceBase):
     ret.mass = 1625. + STD_CARGO_KG
     ret.safetyModel = car.CarParams.SafetyModel.gm
     ret.wheelbase = 2.60096
-    ret.steerRatio = 15.2
+    ret.steerRatio = 16.8
     ret.steerRatioRear = 0.
     ret.centerToFront = ret.wheelbase * 0.49 # wild guess
     ret.lateralTuning.init('lqr')
@@ -81,7 +81,7 @@ class CarInterface(CarInterfaceBase):
     ret.stoppingControl = False
     ret.startAccel = 0.4
 
-    ret.steerLimitTimer = 2.5
+    ret.steerLimitTimer = 3.5
     ret.radarTimeStep = 0.0667  # GM radar runs at 15Hz instead of standard 20Hz
 
     return ret
